@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vodafone</title>
+    <style>
+      /* .test ~ p */
+      /* .test + p */
+      .test > p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <h1>Heading</h1>
+      <p>p here</p>
+      <h1>Heading</h1>
+      <p>p here</p>
+    </div>
+    <p>out p here</p>
+    <h1>out Heading</h1>
+
+    <p>out p here</p>
+
+    <script>
+      false == 0; // true
+      false === 0; // false
+
+      // what is output and why
+      var arr = [];
+      for (var i = 0; i < 5; i++) {
+        arr.push(function () {
+          console.log(i);
+        });
+      }
+      console.log(arr[0]());
+      console.log(arr[1]());
+
+      // write code that can take this 2 calls
+      // sum(1)(2) Or sum (1,2)  in es5, es6
+
+      // es5
+      function sum(a, b) {
+        if (arguments.length === 1)
+          return function (b) {
+            console.log(a + b);
+          };
+        else console.log(a + b);
+      }
+
+      sum(3)(4);
+
+      // es6
+      const sum2 = (a, b) => (b ? a + b : (b) => a + b);
+      sum2(4, 5);
+
+      // what is output and why
+      var x = 5;
+      (function () {
+        // var x = 10;
+        x = 10;
+        console.log(x);
+      })();
+      console.log(x);
+
+      // what is output and why
+      var name = "ali";
+      function init() {
+        var name = "Mozilla";
+        function displayName() {
+          console.log(name);
+        }
+        displayName();
+      }
+      init();
+    </script>
+  </body>
+</html>
