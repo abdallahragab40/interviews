@@ -3,7 +3,7 @@
  *Example: findFirstDupl([2, 4, 5, 1, 3, 5, 4]) returns 4
  */
 
-function findFirstDupl(arr) {
+const findFirstDupl = (arr) => {
   let numMap = {};
   for (const num of arr) {
     if (!numMap[num]) {
@@ -18,4 +18,4 @@ function findFirstDupl(arr) {
       return num;
     }
   }
-}
+};
